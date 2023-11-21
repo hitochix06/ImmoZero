@@ -45,15 +45,13 @@
       </PopoverGroup>
 
       <!-- personnaliser icones inscription/connexion -->
+
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <RouterLink
           to="connexion"
-          class="text-sm font-semibold leading-6 text-gray-900"
-          >S'abonner <span aria-hidden="true">&rarr;</span></RouterLink
+          href="#"
+          class="text-sm font-semibold leading-6"
         >
-      </div>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm font-semibold leading-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -69,7 +67,7 @@
               style="color: #ffffff"
             />
           </svg>
-        </a>
+        </RouterLink>
       </div>
     </nav>
 

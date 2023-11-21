@@ -1,7 +1,11 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="fondecran">
+<h1>Connexion</h1>
   </div>
 </template>
 
-<style></style>
+<style>
+.fondecran {
+  background-color: #e8eef5;
+}
+</style>
