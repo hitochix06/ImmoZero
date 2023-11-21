@@ -28,18 +28,26 @@
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <PopoverGroup class="hidden lg:flex lg:gap-x-12">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+      <PopoverGroup class="hidden lg:flex lg:gap-x-12 texte_majuscule">
+        <a
+          href="#"
+          class="text-sm font-semibold leading-6 text-gray-900 couleur_fond"
           >Accueil</a
         >
 
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+        <a
+          href="#"
+          class="text-sm font-semibold leading-6 text-gray-900 couleur_fond"
           >Ventes</a
         >
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+        <a
+          href="#"
+          class="text-sm font-semibold leading-6 text-gray-900 couleur_fond"
           >A propose</a
         >
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+        <a
+          href="#"
+          class="text-sm font-semibold leading-6 text-gray-900 couleur_fond"
           >Contact</a
         >
       </PopoverGroup>
@@ -131,11 +139,22 @@
   </header>
 </template>
 
-
+<style>
+.texte_majuscule {
+  text-transform: uppercase;
+}
+.couleur_fond {
+  background: #43b7be;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+}
+</style>
 
 <script setup>
 import { ref } from "vue";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
+
 const mobileMenuOpen = ref(false);
 </script>
