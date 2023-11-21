@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-white">
+  <header class="bg-white navigation-header">
     <nav
       class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       aria-label="Global"
@@ -29,51 +29,50 @@
         </button>
       </div>
       <PopoverGroup class="hidden lg:flex lg:gap-x-12 texte_majuscule">
-        <a
-          href="#"
-          class="text-sm font-semibold leading-6 text-gray-900 couleur_fond"
+        <a href="#" class="text-sm font-semibold leading-6 couleur_fond"
           >Accueil</a
         >
 
-        <a
-          href="#"
-          class="text-sm font-semibold leading-6 text-gray-900 couleur_fond"
+        <a href="#" class="text-sm font-semibold leading-6 couleur_fond"
           >Ventes</a
         >
-        <a
-          href="#"
-          class="text-sm font-semibold leading-6 text-gray-900 couleur_fond"
+        <a href="#" class="text-sm font-semibold leading-6 couleur_fond"
           >A propose</a
         >
-        <a
-          href="#"
-          class="text-sm font-semibold leading-6 text-gray-900 couleur_fond"
+        <a href="#" class="text-sm font-semibold leading-6 couleur_fond"
           >Contact</a
         >
       </PopoverGroup>
 
+      <!-- personnaliser icones inscription/connexion -->
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-          ><svg
+        <RouterLink
+          to="connexion"
+          class="text-sm font-semibold leading-6 text-gray-900"
+          >S'abonner <span aria-hidden="true">&rarr;</span></RouterLink
+        >
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="#" class="text-sm font-semibold leading-6">
+          <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
             viewBox="0 0 24 24"
-            strokeWidth="{1.5}"
-            stroke="currentColor"
+            fill="currentColor"
             className="w-6 h-6"
-            width="30"
-            height="30"
+            width="40"
+            height="40"
           >
             <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-              height=""
+              fillRule="evenodd"
+              d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+              clipRule="evenodd"
+              style="color: #ffffff"
             />
           </svg>
         </a>
       </div>
     </nav>
+
     <Dialog
       as="div"
       class="lg:hidden"
@@ -84,6 +83,7 @@
       <DialogPanel
         class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
       >
+        <!-- mobile menu  -->
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
             <img
@@ -106,29 +106,29 @@
             <div class="space-y-2 py-6">
               <a
                 href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                 >Accueil</a
               >
               <a
                 href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                 >Ventes</a
               >
               <a
                 href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                 >A propos</a
               >
               <a
                 href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                 >Contact</a
               >
             </div>
             <div class="py-6">
               <a
                 href="#"
-                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 hover:bg-gray-50"
                 >Connexion/Incription</a
               >
             </div>
@@ -148,6 +148,11 @@
   padding: 10px;
   color: white;
   border-radius: 10px;
+}
+
+.navigation-header {
+  background-image: url("@/assets/images/fondecran.png");
+  background-size: cover;
 }
 </style>
 
