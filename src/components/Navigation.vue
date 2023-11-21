@@ -53,8 +53,8 @@
             strokeWidth="{1.5}"
             stroke="currentColor"
             className="w-6 h-6"
-            width="50"
-            height="50"
+            width="30"
+            height="30"
           >
             <path
               strokeLinecap="round"
