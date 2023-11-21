@@ -7,52 +7,33 @@
             class="w-full lg:w-1/2 p-4"
             style="background-color: white; border-radius: 37px 0px 0px 37px"
           >
-            <div class="flex justify-center">
-              <img
-                alt="ImmoZero logo"
-                class="logo"
-                src="@/assets/logo.svg"
-                height="40"
-                width="133"
-              />
-            </div>
             <form>
               <h1 class="mb-8 text-3xl text-center">Se Connecter</h1>
-              <div class="mb-4">
-                <label class="block" for="formEmail">Email</label>
+              <div class="mt-6 flex flex-col max-w-md gap-x-4">
+                <label for="email-address"></label>
                 <input
+                  id="email-address"
+                  name="email"
                   type="email"
-                  id="formEmail"
-                  class="form-control"
-                  placeholder="Adresse Email"
-                  required
+                  autocomplete="email"
+                  class="min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
+                  placeholder="Adress e-mail"
                 />
-              </div>
-              <div class="mb-4">
-                <label class="block" for="formopasse">mots passe</label>
+                <label for="email-address"></label>
                 <input
-                  type="password"
-                  id="formopasse"
-                  class="form-control"
-                  required
+                  id="Mots de passe"
+                  name="Mots de passe"
+                  type="Mots de passe"
+                  autocomplete="Mots de passe"
+                  class="min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
+                  placeholder="Mots de passe"
                 />
-                <a class="text-gray-500" href="#!">Mot de passe oublié ?</a>
-              </div>
-              <div class="text-center pt-1 mb-5 pb-1">
-                <button type="submit" class="btn btn-light btn-lg">
-                  Entre
-                </button>
-              </div>
-              <div class="flex items-center justify-center pb-4">
-                <p class="mb-0 mr-2">Vous n’avez pas de compte ?</p>
-                <a
-                  type="button"
-                  class="btn btn-outline"
-                  href="https://www.gais-nice.org/registration/register.html"
-                  target="_blank"
-                  role="button"
-                  >Créez</a
+                <button
+                  type="submit"
+                  class="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 m-2"
                 >
+                  Connexion
+                </button>
               </div>
             </form>
           </div>
@@ -94,8 +75,11 @@
 .fondecran {
   background-color: #e8eef5;
 }
-.couleur_fond {
-  /* background-color: #143457; */
-  /* border-radius: 0px 37px 37px 0px; */
+.text-3xl {
+  font-weight: 900;
+}
+
+.ring-white\/10 {
+  --tw-ring-color: rgb(0 0 0 / 27%);
 }
 </style>
