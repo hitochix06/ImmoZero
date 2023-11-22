@@ -4,22 +4,29 @@
       <div class="md:flex">
         <div class="w-full p-3">
           <h1
-            class="text-3xl font-semibold text-gray-900 dark:text-white uppercase text-center"
+            class="text-3xl font-semibold text-white dark:text-white uppercase text-center"
           >
             L'immoblier gratuit entre particuliers
           </h1>
 
-          <div class="relative">
+          <div class="relative flex">
             <input
               type="search"
               id="search"
-              class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-              placeholder="Recherchez dans vos annonces"
+              class="block p-2.5 w-1/2 z-20 text-sm text-gray-900 bg-gray-50 rounded-s-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+              placeholder="chercher par ville"
+              required
+            />
+            <input
+              type="number"
+              id="budget"
+              class="block p-2.5 w-1/2 z-20 text-sm text-gray-900 bg-gray-50  border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+              placeholder="Budget maximum"
               required
             />
             <button
               type="submit"
-              class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full bg-[#43B7BE] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-white rounded-e-lg flex items-center"
+              class="p-2.5 text-sm font-medium h-full bg-[#43B7BE] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-white rounded-e-lg flex items-center"
             >
               <div class="uppercase">Chercher</div>
               <svg
@@ -67,7 +74,7 @@
   </div>
   <div class="container mx-auto py-5">
     <h2>Notre Sélection</h2>
-    <h3>Biens immobilier à vendre et louze sz particuliers à particulier</h3>
+    <h3>Biens immobiliers à vendre de particulier à particulier</h3>
   </div>
 </template>
 
@@ -78,6 +85,7 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
 h2 {
   font-family: "Montserrat", sans-serif;
   color: red;
