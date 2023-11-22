@@ -2,7 +2,7 @@
   <div class="py-3 px-1 fondimage">
     <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
       <div class="md:flex">
-        <div class="w-full p-3">
+        <div class="w-full pt-10">
           <h1
             class="text-3xl font-semibold text-white dark:text-white uppercase text-center"
           >
@@ -145,12 +145,16 @@
 </template>
 
 <style scoped>
+.pt-10 {
+  padding-top: 7rem;
+}
 .fondimage {
   background-image: url("../../assets/images/fondecran.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 40vh;
+  background-attachment: fixed;
+  height: 50vh;
 }
 
 span {
