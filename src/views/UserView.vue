@@ -219,12 +219,12 @@
           <div class="mt-4">
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div class="sm:col-span-3">
-                <label
-                  for="first-name"
-                  class="block text-sm font-medium leading-6 text-gray-900"
-                  >Titre</label
-                >
                 <div class="mt-2">
+                  <label
+                    for="first-name"
+                    class="block text-sm font-medium leading-6 text-gray-900"
+                    >Titre</label
+                  >
                   <input
                     type="text"
                     name="first-name"
@@ -246,7 +246,26 @@
                     id="price"
                     autocomplete="off"
                     class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
-                    placeholder="Prix"
+                    placeholder="Prix €"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="sm:col-span-3">
+                <div class="mt-2">
+                  <label
+                    for="location"
+                    class="block text-sm font-medium leading-6 text-gray-900"
+                    >Emplacement</label
+                  >
+                  <input
+                    id="location"
+                    name="location"
+                    type="text"
+                    autocomplete="off"
+                    class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
+                    placeholder="Ville"
                     required
                   />
                 </div>
@@ -254,38 +273,19 @@
 
               <div class="sm:col-span-4">
                 <label
-                  for="email"
+                  for="description"
                   class="block text-sm font-medium leading-6 text-gray-900"
-                  >Emplacement</label
+                  >Description</label
                 >
                 <div class="mt-2">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autocomplete="email"
+                  <textarea
+                    id="description"
+                    name="description"
+                    autocomplete="off"
                     class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
-                  />
-                </div>
-              </div>
-
-              <div class="sm:col-span-3">
-                <label
-                  for="country"
-                  class="block text-sm font-medium leading-6 text-gray-900"
-                  >Country</label
-                >
-                <div class="mt-2">
-                  <select
-                    id="country"
-                    name="country"
-                    autocomplete="country-name"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                  >
-                    <option>United States</option>
-                    <option>Canada</option>
-                    <option>Mexico</option>
-                  </select>
+                    placeholder="Description"
+                    required
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -294,10 +294,10 @@
               @click="isOpen = false"
               class="px-6 py-2 text-blue-800 border border-blue-600 rounded"
             >
-              Cancel
+              Annuler
             </button>
-            <button class="px-6 py-2 ml-2 text-blue-100 bg-blue-600 rounded">
-              Save
+            <button class="px-6 py-2 ml-2 text-[#fff] bg-[#43B7BE] rounded">
+              Ajouter
             </button>
           </div>
         </div>
