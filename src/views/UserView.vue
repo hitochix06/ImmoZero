@@ -1,5 +1,5 @@
 <template>
-
+  <!-- Création de la barre de recherche -->
   <div class="py-3 bg-[#E8EEF5] px-1">
     <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
       <div class="md:flex">
@@ -64,7 +64,6 @@
   </div>
 
   <!-- creation bouton trier par date -->
-
   <div class="container mx-auto flex justify-end mt-10">
     <Menu as="div" class="relative inline-block text-left">
       <div>
@@ -184,7 +183,6 @@
   </div>
 
   <!-- creation formulaire de modal  -->
-
   <div class="container mx-auto">
     <div class="flex justify-center">
       <div
@@ -216,6 +214,19 @@
               />
             </svg>
           </div>
+          <!-- 
+          <div class="mt-2">
+            <label for="image" class="block text-sm font-medium leading-6 text-gray-900">Image</label>
+            <input
+              type="file"
+              id="image"
+              name="image"
+              accept="image/*"
+              class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
+              required
+            />
+          </div> -->
+
           <div class="mt-4">
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div class="sm:col-span-3">

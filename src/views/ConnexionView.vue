@@ -111,7 +111,6 @@
   </div>
 
   <!-- création du formulaire inscription modal -->
-
   <div class="container mx-auto">
     <div class="flex justify-center">
       <form
