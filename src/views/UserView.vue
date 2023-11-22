@@ -191,9 +191,14 @@
         v-show="isOpen"
         class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50"
       >
-        <div class="max-w-2xl p-6 bg-white rounded-md shadow-xl">
+        <div class="w-full md:w-2/3 lg:w-3/5 p-6 bg-white rounded-md shadow-xl">
           <div class="flex items-center justify-between">
-            <h3 class="text-2xl">Déposer une annonce</h3>
+            <h3
+              class="text-2xl"
+              style="text-transform: uppercase; font-weight: 700"
+            >
+              Déposer une annonce
+            </h3>
             <svg
               @click="isOpen = false"
               xmlns="http://www.w3.org/2000/svg"
@@ -217,7 +222,7 @@
                 <label
                   for="first-name"
                   class="block text-sm font-medium leading-6 text-gray-900"
-                  >First name</label
+                  >Titre</label
                 >
                 <div class="mt-2">
                   <input
@@ -225,24 +230,24 @@
                     name="first-name"
                     id="first-name"
                     autocomplete="given-name"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
+                    placeholder="Titre"
+                    required
                   />
                 </div>
               </div>
 
               <div class="sm:col-span-3">
-                <label
-                  for="last-name"
-                  class="block text-sm font-medium leading-6 text-gray-900"
-                  >Last name</label
-                >
                 <div class="mt-2">
+                  <label for="Price">Prix</label>
                   <input
-                    type="text"
-                    name="last-name"
-                    id="last-name"
-                    autocomplete="family-name"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    type="number"
+                    name="price"
+                    id="price"
+                    autocomplete="off"
+                    class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
+                    placeholder="Prix"
+                    required
                   />
                 </div>
               </div>
@@ -251,7 +256,7 @@
                 <label
                   for="email"
                   class="block text-sm font-medium leading-6 text-gray-900"
-                  >Email address</label
+                  >Emplacement</label
                 >
                 <div class="mt-2">
                   <input
@@ -259,7 +264,7 @@
                     name="email"
                     type="email"
                     autocomplete="email"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
                   />
                 </div>
               </div>
