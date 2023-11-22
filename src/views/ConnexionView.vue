@@ -218,6 +218,12 @@
   </div>
 </template>
 
+<style scoped>
+.lg\:py-16 {
+  padding-top: 1rem;
+  padding-bottom: 0rem;
+}
+</style>
 <script setup>
 import { ref } from "vue";
 const isOpen = ref(false);

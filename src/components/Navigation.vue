@@ -1,7 +1,7 @@
 <template>
   <header class="bg-white navigation-header">
     <nav
-      class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+      class="mx-auto flex max-w-7xl items-center justify-between lg:px-8"
       aria-label="Global"
     >
       <div class="flex lg:flex-1">
@@ -58,7 +58,7 @@
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <RouterLink
           to="connexion"
-          class="text-sm font-semibold leading-6 flex items-center"
+          class="text-sm font-semibold leading-6 flex items-center hover:underline"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

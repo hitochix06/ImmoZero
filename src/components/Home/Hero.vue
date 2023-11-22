@@ -20,13 +20,13 @@
             <input
               type="number"
               id="budget"
-              class="block p-2.5 w-1/2 z-20 text-sm text-gray-900 bg-gray-50  border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+              class="block p-2.5 w-1/2 z-20 text-sm text-gray-900 bg-gray-50 border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
               placeholder="Budget maximum"
               required
             />
             <button
               type="submit"
-              class="p-2.5 text-sm font-medium h-full bg-[#43B7BE] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-white rounded-e-lg flex items-center"
+              class="block p-2.5 w-1/4 z-20 bg-[#43B7BE] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-white rounded-e-lg flex items-center"
             >
               <div class="uppercase">Chercher</div>
               <svg
@@ -72,9 +72,49 @@
       </div>
     </div>
   </div>
-  <div class="container mx-auto py-5">
-    <h2>Notre Sélection</h2>
-    <h3>Biens immobiliers à vendre de particulier à particulier</h3>
+
+  <!-- Creation de carte pour les annonces -->
+  <div class="bg-white">
+    <div
+      class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
+    >
+      <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+        Notre Sélection
+      </h2>
+      <h3>Biens immobiliers à vendre de particulier à particulier</h3>
+
+      <div
+        class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+      >
+        <div
+          v-for="product in products"
+          :key="product.id"
+          class="group relative"
+        >
+          <div
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80"
+          >
+            <img
+              :src="product.imageSrc"
+              :alt="product.imageAlt"
+              class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+            />
+          </div>
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a :href="product.href">
+                  <span aria-hidden="true" class="absolute inset-0" />
+                  {{ product.name }}
+                </a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">{{ product.price }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -84,6 +124,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 40vh;
 }
 
 h2 {
@@ -98,5 +139,47 @@ h3 {
 </style>
 
 <script setup>
-// Ajoutez votre logique de script ici
+const products = [
+  {
+    id: 1,
+    name: "Basic Tee",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: "$35",
+    color: "Black",
+  },
+
+  {
+    id: 2,
+    name: "Basic Tee",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: "$35",
+    color: "Black",
+  },
+  {
+    id: 1,
+    name: "Basic Tee",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: "$35",
+    color: "Black",
+  },
+  {
+    id: 1,
+    name: "Basic Tee",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: "$35",
+    color: "Black",
+  },
+];
 </script>
