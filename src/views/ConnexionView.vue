@@ -117,6 +117,7 @@
       <form
         v-show="isOpen"
         class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50"
+        @submit.prevent="handleInscription"
       >
         <div class="w-full md:w-2/3 lg:w-3/5 p-6 bg-white rounded-md shadow-xl">
           <div class="flex items-center justify-between">
@@ -153,9 +154,9 @@
                     >NOM</label
                   >
                   <input
+                    v-model="username"
                     type="text"
-                    name="first-name"
-                    id="first-name"
+                    name="username"
                     autocomplete="given-name"
                     class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
                     placeholder="Titre"
@@ -171,7 +172,6 @@
                     v-model="email"
                     type="email"
                     name="email"
-                    id="email"
                     autocomplete="off"
                     class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
                     placeholder="Email"
@@ -188,9 +188,9 @@
                     >Mot de passe</label
                   >
                   <input
-                    id="password"
-                    name="password"
+                    v-model="password"
                     type="password"
+                    name="password"
                     autocomplete="off"
                     class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
                     placeholder="Mot de passe"
@@ -207,6 +207,7 @@
               Annuler
             </button>
             <button
+              type="submit"
               class="ml-2 text-[#fff] bg-[#43B7BE] rounded hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55"
             >
               Ajouter
@@ -225,10 +226,9 @@
 }
 </style>
 
-
 <script setup>
 import { ref } from "vue";
-import axios from 'axios'; // Assurez-vous d'avoir installé axios
+import axios from "axios"; // Assurez-vous d'avoir installé axios
 
 const isOpen = ref(false);
 const email = ref("");
@@ -237,7 +237,7 @@ const username = ref("");
 
 const handleInscription = async () => {
   try {
-    const response = await axios.post('users/inscription', {
+    const response = await axios.post("users/inscription", {
       username: username.value,
       email: email.value,
       password: password.value,
