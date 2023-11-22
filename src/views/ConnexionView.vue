@@ -86,6 +86,7 @@
                 <div class="mt-6 flex items-baseline justify-center gap-x-2">
                   <label for="email-address"></label>
                   <input
+                    v-model="email"
                     id="email_address"
                     name="email"
                     type="email"
@@ -96,7 +97,7 @@
                   />
                 </div>
                 <button
-                  @click="isOpen = true"
+                  @click="handleClick"
                   type="button"
                   class="mt-10 block w-full rounded-md bg-[#43B7BE] px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
@@ -167,6 +168,7 @@
                 <div class="mt-2">
                   <label for="email">Email</label>
                   <input
+                    v-model="email"
                     type="email"
                     name="email"
                     id="email"
@@ -217,4 +219,15 @@
 <script setup>
 import { ref } from "vue";
 const isOpen = ref(false);
+const email = ref(""); // Ajoutez cette ligne
+
+// Ajoutez cette fonction
+const resetEmail = () => {
+  email.value = "";
+};
+
+const handleClick = () => {
+  resetEmail();
+  isOpen.value = true;
+};
 </script>
