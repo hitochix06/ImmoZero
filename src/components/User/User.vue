@@ -1,5 +1,4 @@
 <template>
-  <form>
     <div class="py-3 bg-[#E8EEF5] px-1">
       <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
         <div class="md:flex">
@@ -62,5 +61,10 @@
         </div>
       </div>
     </div>
-  </form>
+
 </template>
+
+<script>
+
+
+</script>
