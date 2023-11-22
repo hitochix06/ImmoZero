@@ -4,7 +4,7 @@
       <div class="md:flex">
         <div class="w-full p-10">
           <h1
-            class="text-3xl font-semibold text-white dark:text-white uppercase text-center py-10"
+            class="text-3xl font-semibold text-white dark:text-white uppercase text-center py-5"
           >
             L'immoblier gratuit entre particuliers
           </h1>
