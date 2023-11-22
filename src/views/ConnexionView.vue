@@ -224,8 +224,33 @@
   padding-bottom: 0rem;
 }
 </style>
+
+
 <script setup>
 import { ref } from "vue";
+import axios from 'axios'; // Assurez-vous d'avoir installé axios
+
 const isOpen = ref(false);
-const email = ref(""); // Ajoutez cette ligne
+const email = ref("");
+const password = ref("");
+const username = ref("");
+
+const handleInscription = async () => {
+  try {
+    const response = await axios.post('users/inscription', {
+      username: username.value,
+      email: email.value,
+      password: password.value,
+    });
+
+    if (response.data.status === 200) {
+      // Inscription réussie
+      // Vous pouvez rediriger l'utilisateur vers la page de connexion ou faire autre chose
+    } else {
+      // Gérer l'erreur d'inscription
+    }
+  } catch (error) {
+    // Gérer l'erreur de réseau
+  }
+};
 </script>
