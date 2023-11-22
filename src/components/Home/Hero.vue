@@ -1,18 +1,18 @@
 <template>
-  <div
-    class="py-3 bg-[#E8EEF5] px-1"
-    :style="{
-      backgroundImage: 'url(../../assets/images/fondecran.png)',
-      backgroundSize: 'cover',
-    }"
-  >
+  <div class="py-3 px-1 fondimage">
     <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
       <div class="md:flex">
         <div class="w-full p-3">
+          <h1
+            class="text-3xl font-semibold text-gray-900 dark:text-white uppercase text-center"
+          >
+            L'immoblier gratuit entre particuliers
+          </h1>
+
           <div class="relative">
             <input
               type="search"
-              id="search-dropdown"
+              id="search"
               class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
               placeholder="Recherchez dans vos annonces"
               required
@@ -65,7 +65,29 @@
       </div>
     </div>
   </div>
+  <div class="container mx-auto py-5">
+    <h2>Notre Sélection</h2>
+    <h3>Biens immobilier à vendre et louze sz particuliers à particulier</h3>
+  </div>
 </template>
+
+<style scoped>
+.fondimage {
+  background-image: url("../../assets/images/fondecran.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+h2 {
+  font-family: "Montserrat", sans-serif;
+  color: red;
+  text-decoration: underline;
+}
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+</style>
 
 <script setup>
 // Ajoutez votre logique de script ici
