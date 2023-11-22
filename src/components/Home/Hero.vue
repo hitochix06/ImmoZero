@@ -2,9 +2,9 @@
   <div class="py-3 px-1 fondimage">
     <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
       <div class="md:flex">
-        <div class="w-full pt-10">
+        <div class="w-full p-10">
           <h1
-            class="text-3xl font-semibold text-white dark:text-white uppercase text-center"
+            class="text-3xl font-semibold text-white dark:text-white uppercase text-center py-10"
           >
             L'immoblier gratuit entre particuliers
           </h1>
@@ -145,9 +145,6 @@
 </template>
 
 <style scoped>
-.pt-10 {
-  padding-top: 7rem;
-}
 .fondimage {
   background-image: url("../../assets/images/fondecran.png");
   background-size: cover;
