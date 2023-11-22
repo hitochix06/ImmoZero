@@ -1,6 +1,6 @@
 <template>
   <form>
-    <div class="py-20 bg-gray-300 px-2">
+    <div class="py-3 bg-[#E8EEF5] px-1">
       <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
         <div class="md:flex">
           <div class="w-full p-3">
@@ -35,7 +35,7 @@
               </button>
             </div>
 
-            <div class="container mx-auto">
+            <div class="container mx-auto flex justify-center mt-10">
               <button
                 type="button"
                 class="text-white bg-[#43B7BE] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"

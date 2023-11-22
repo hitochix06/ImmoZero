@@ -29,22 +29,24 @@
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12 texte_majuscule">
-        <RouterLink to="/" class="text-sm font-semibold leading-6 couleur_fond"
+        <RouterLink
+          to="/"
+          class="text-sm font-semibold leading-6 couleur_fond hover:bg-[#3b5998] focus:ring-4 focus:outline-none focus:ring-[#3b5998]"
           >Accueil</RouterLink
         >
         <RouterLink
           to="/ventes"
-          class="text-sm font-semibold leading-6 couleur_fond"
+          class="text-sm font-semibold leading-6 couleur_fond hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50"
           >Ventes</RouterLink
         >
         <RouterLink
           to="/apropos"
-          class="text-sm font-semibold leading-6 couleur_fond"
+          class="text-sm font-semibold leading-6 couleur_fond hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50"
           >A propose</RouterLink
         >
         <RouterLink
           to="/contact"
-          class="text-sm font-semibold leading-6 couleur_fond"
+          class="text-sm font-semibold leading-6 couleur_fond hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50"
           >Contact</RouterLink
         >
       </div>
@@ -126,7 +128,7 @@
             </div>
             <div class="py-6">
               <a
-                href="#"
+                href="connexion"
                 class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 hover:bg-gray-50"
                 >Connexion/Incription</a
               >

@@ -1,6 +1,6 @@
 <template>
-  <div class="fondecran py-24 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+  <div class="bg-[#E8EEF5] py-2 sm:py-4">
+    <div class="mx-auto max-w-7xl px-1 lg:px-8">
       <div
         class="mx-auto mt-16 max-w-full rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 flex flex-col lg:flex-row"
       >
@@ -110,10 +110,6 @@
   </div>
 </template>
 
-<style>
-.fondecran {
-  background-color: #e8eef5;
-}
-</style>
+<style></style>
 
 <script setup></script>
