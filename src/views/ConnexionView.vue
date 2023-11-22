@@ -2,10 +2,10 @@
   <div class="fondecran py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div
-        class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none"
+        class="mx-auto mt-16 max-w-full rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 flex flex-col lg:flex-row"
       >
         <div
-          class="p-8 sm:p-10 lg:flex-auto"
+          class="p-8 sm:p-10 lg:flex-auto flex-1"
           style="background-color: white; border-radius: 37px 0px 0px 37px"
         >
           <h1
@@ -46,7 +46,7 @@
           </form>
         </div>
         <div
-          class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0"
+          class="-mt-2 p-2 lg:mt-0 lg:w-auto lg:max-w-full lg:flex-shrink-0 h-auto flex-grow lg:flex-grow"
           style="background-color: #143457; border-radius: 0px 37px 37px 0px"
         >
           <div
