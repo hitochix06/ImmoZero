@@ -97,7 +97,7 @@
                   />
                 </div>
                 <button
-                  @click="handleClick"
+                  @click="isOpen = true"
                   type="button"
                   class="mt-10 block w-full rounded-md bg-[#43B7BE] px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
@@ -220,14 +220,4 @@
 import { ref } from "vue";
 const isOpen = ref(false);
 const email = ref(""); // Ajoutez cette ligne
-
-// Ajoutez cette fonction
-const resetEmail = () => {
-  email.value = "";
-};
-
-const handleClick = () => {
-  resetEmail();
-  isOpen.value = true;
-};
 </script>
