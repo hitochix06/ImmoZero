@@ -27,8 +27,9 @@
                     name="email"
                     type="email"
                     autocomplete="email"
-                    class="min-w-0 flex-auto rounded-md border-2 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
+                    class="min-w-0 flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
                     placeholder="E-mai"
+                    required
                   />
                 </div>
                 <div class="mt-6 flex items-baseline justify-center gap-x-2">
@@ -38,7 +39,7 @@
                     name="password"
                     type="password"
                     autocomplete="current-password"
-                    class="min-w-0 flex-auto rounded-md border-2 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
+                    class="min-w-0 flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
                     placeholder="Mot de passe"
                   />
                 </div>
@@ -49,8 +50,8 @@
                 </div>
                 <RouterLink
                   to="user"
-                  class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  style="background-color: #43b7be; text-transform: uppercase"
+                  class="mt-10 block w-full rounded-md bg-[#43B7BE] px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  style="text-transform: uppercase"
                   >Connexion
                 </RouterLink>
               </div>
@@ -89,14 +90,15 @@
                     name="email"
                     type="email"
                     autocomplete="email"
-                    class="min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
+                    class="min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
                     placeholder="Adress e-mail"
+                    required
                   />
                 </div>
                 <a
                   href="#"
-                  class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  style="text-transform: uppercase; background-color: #43b7be"
+                  class="mt-10 block w-full rounded-md bg-[#43B7BE] px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  style="text-transform: uppercase"
                   >C'est Parti !</a
                 >
               </div>

@@ -14,7 +14,7 @@
               />
               <button
                 type="submit"
-                class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full bg-[#43B7BE] text-white rounded-e-lg flex items-center"
+                class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full bg-[#43B7BE] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-white rounded-e-lg flex items-center"
               >
                 <div style="text-transform: uppercase">Chercher</div>
                 <svg
