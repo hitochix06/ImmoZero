@@ -206,7 +206,9 @@
             >
               Annuler
             </button>
-            <button class="px-6 py-2 ml-2 text-[#fff] bg-[#43B7BE] rounded">
+            <button
+              class="px-6 py-2 ml-2 text-[#fff] bg-[#43B7BE] rounded hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55"
+            >
               Ajouter
             </button>
           </div>
