@@ -9,7 +9,7 @@
             L'immoblier gratuit entre particuliers
           </h1>
 
-          <div class="relative flex">
+          <div class="relative flex z-0">
             <input
               type="search"
               id="search"
