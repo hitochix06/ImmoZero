@@ -114,7 +114,7 @@
 
   <div class="container mx-auto">
     <div class="flex justify-center">
-      <div
+      <form
         v-show="isOpen"
         class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50"
       >
@@ -124,7 +124,7 @@
               class="text-2xl"
               style="text-transform: uppercase; font-weight: 700"
             >
-              Déposer une annonce
+              Formulaire d'inscription
             </h3>
             <svg
               @click="isOpen = false"
@@ -150,7 +150,7 @@
                   <label
                     for="first-name"
                     class="block text-sm font-medium leading-6 text-gray-900"
-                    >Titre</label
+                    >NOM</label
                   >
                   <input
                     type="text"
@@ -166,53 +166,35 @@
 
               <div class="sm:col-span-3">
                 <div class="mt-2">
-                  <label for="Price">Prix</label>
+                  <label for="email">Email</label>
                   <input
-                    type="number"
-                    name="price"
-                    id="price"
+                    type="email"
+                    name="email"
+                    id="email"
                     autocomplete="off"
                     class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
-                    placeholder="Prix €"
+                    placeholder="Email"
                     required
                   />
                 </div>
               </div>
 
-              <div class="sm:col-span-3">
+              <div class="sm:col-span-3 py-2">
                 <div class="mt-2">
                   <label
-                    for="location"
+                    for="password"
                     class="block text-sm font-medium leading-6 text-gray-900"
-                    >Emplacement</label
+                    >Mot de passe</label
                   >
                   <input
-                    id="location"
-                    name="location"
-                    type="text"
+                    id="password"
+                    name="password"
+                    type="password"
                     autocomplete="off"
                     class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
-                    placeholder="Ville"
+                    placeholder="Mot de passe"
                     required
                   />
-                </div>
-              </div>
-
-              <div class="sm:col-span-4">
-                <label
-                  for="description"
-                  class="block text-sm font-medium leading-6 text-gray-900"
-                  >Description</label
-                >
-                <div class="mt-2">
-                  <textarea
-                    id="description"
-                    name="description"
-                    autocomplete="off"
-                    class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
-                    placeholder="Description"
-                    required
-                  ></textarea>
                 </div>
               </div>
             </div>
@@ -228,7 +210,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </template>
