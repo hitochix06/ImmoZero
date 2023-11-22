@@ -45,6 +45,7 @@
             </div>
           </form>
         </div>
+        <!-- formulaire d'inscription -->
         <div
           class="-mt-2 p-2 lg:mt-0 lg:w-auto lg:max-w-full lg:flex-shrink-0 h-auto flex-grow lg:flex-grow"
           style="background-color: #143457; border-radius: 0px 37px 37px 0px"
@@ -52,35 +53,40 @@
           <div
             class="text-center ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16"
           >
-            <div class="mx-auto max-w-xs px-8">
-              <h1
-                class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
-                style="color: white"
-              >
-                CRÉÉZ VOTRE COMPTE
-              </h1>
-              <p
-                class="mt-6 flex items-baseline justify-center gap-x-2"
-                style="color: white"
-              >
-                Vous souhaitez passer une petite annonce immobilière de
-                particulier à particulier et gratuitement ?
-              </p>
-              <label for="email-address"></label>
-              <input
-                id="email_address"
-                name="email"
-                type="email"
-                autocomplete="email"
-                class="min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
-                placeholder="Adress e-mail"
-              />
-              <a
-                href="#"
-                class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >C'est Parti !</a
-              >
-            </div>
+            <form>
+              <div class="mx-auto max-w-xs">
+                <h1
+                  class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
+                  style="color: white"
+                >
+                  CRÉÉZ VOTRE COMPTE
+                </h1>
+
+                <p
+                  class="mt-6 flex items-baseline justify-center gap-x-2"
+                  style="color: white"
+                >
+                  Vous souhaitez passer une petite annonce immobilière de
+                  particulier à particulier et gratuitement ?
+                </p>
+                <div class="mt-6 flex items-baseline justify-center gap-x-2">
+                  <label for="email-address"></label>
+                  <input
+                    id="email_address"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    class="min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
+                    placeholder="Adress e-mail"
+                  />
+                </div>
+                <a
+                  href="#"
+                  class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >C'est Parti !</a
+                >
+              </div>
+            </form>
           </div>
         </div>
       </div>
