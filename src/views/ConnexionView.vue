@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#E8EEF5] py-2 sm:py-4">
+  <div class="bg-[#E8EEF5] py-2 sm:py-4" style="height: 100vh">
     <div class="mx-auto max-w-7xl px-1 lg:px-8">
       <div
         class="mx-auto mt-16 max-w-full rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 flex flex-col lg:flex-row"
