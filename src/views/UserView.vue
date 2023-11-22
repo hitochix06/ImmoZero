@@ -193,30 +193,98 @@
       >
         <div class="max-w-2xl p-6 bg-white rounded-md shadow-xl">
           <div class="flex items-center justify-between">
-            <h3 class="text-2xl">Model Title</h3>
+            <h3 class="text-2xl">Déposer une annonce</h3>
             <svg
               @click="isOpen = false"
               xmlns="http://www.w3.org/2000/svg"
-              class="w-8 h-8 text-red-900 cursor-pointer"
-              fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
+              fill="currentColor"
+              className="w-6 h-6 "
+              width="30"
+              height="30"
+              style="cursor: pointer"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                fillRule="evenodd"
+                d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                clipRule="evenodd"
               />
             </svg>
           </div>
           <div class="mt-4">
-            <p class="mb-4 text-sm">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Voluptatibus qui nihil laborum quaerat blanditiis nemo explicabo
-              voluptatum ea architecto corporis quo vitae, velit temporibus
-              eaque quisquam in quis provident necessitatibus.
-            </p>
+            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+              <div class="sm:col-span-3">
+                <label
+                  for="first-name"
+                  class="block text-sm font-medium leading-6 text-gray-900"
+                  >First name</label
+                >
+                <div class="mt-2">
+                  <input
+                    type="text"
+                    name="first-name"
+                    id="first-name"
+                    autocomplete="given-name"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
+
+              <div class="sm:col-span-3">
+                <label
+                  for="last-name"
+                  class="block text-sm font-medium leading-6 text-gray-900"
+                  >Last name</label
+                >
+                <div class="mt-2">
+                  <input
+                    type="text"
+                    name="last-name"
+                    id="last-name"
+                    autocomplete="family-name"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
+
+              <div class="sm:col-span-4">
+                <label
+                  for="email"
+                  class="block text-sm font-medium leading-6 text-gray-900"
+                  >Email address</label
+                >
+                <div class="mt-2">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
+
+              <div class="sm:col-span-3">
+                <label
+                  for="country"
+                  class="block text-sm font-medium leading-6 text-gray-900"
+                  >Country</label
+                >
+                <div class="mt-2">
+                  <select
+                    id="country"
+                    name="country"
+                    autocomplete="country-name"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  >
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>Mexico</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
             <button
               @click="isOpen = false"
               class="px-6 py-2 text-blue-800 border border-blue-600 rounded"
