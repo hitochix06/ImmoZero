@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-white navigation-header">
+  <header class="bg-[#143457] navigation-header">
     <nav
       class="mx-auto flex max-w-7xl items-center justify-between lg:px-8"
       aria-label="Global"
@@ -18,10 +18,10 @@
       </div>
 
       <!-- Mobile reponsiv -->
-      <div class="flex lg:hidden">
+      <div class="flex lg:hidden " >
         <button
           type="button"
-          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 text-white"
           @click="mobileMenuOpen = true"
         >
           <span class="sr-only">Open main menu</span>
@@ -30,7 +30,7 @@
       </div>
 
       <!-- different navigation -->
-      <div class="hidden lg:flex lg:gap-x-12 texte_majuscule">
+      <div class="hidden lg:flex lg:gap-x-12 texte_majuscule text-white">
         <RouterLink
           to="/"
           class="text-sm font-semibold leading-6 hover:underline"
@@ -55,7 +55,7 @@
 
       <!-- personnaliser icones inscription/connexion -->
 
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end text-white">
         <RouterLink
           to="connexion"
           class="text-sm font-semibold leading-6 flex items-center hover:underline"
