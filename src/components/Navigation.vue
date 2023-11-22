@@ -28,30 +28,31 @@
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <PopoverGroup class="hidden lg:flex lg:gap-x-12 texte_majuscule">
-        <a href="/" class="text-sm font-semibold leading-6 couleur_fond"
-          >Accueil</a
+      <div class="hidden lg:flex lg:gap-x-12 texte_majuscule">
+        <RouterLink to="/" class="text-sm font-semibold leading-6 couleur_fond"
+          >Accueil</RouterLink
         >
-
-        <a href="#" class="text-sm font-semibold leading-6 couleur_fond"
-          >Ventes</a
+        <RouterLink
+          to="/ventes"
+          class="text-sm font-semibold leading-6 couleur_fond"
+          >Ventes</RouterLink
         >
-        <a href="#" class="text-sm font-semibold leading-6 couleur_fond"
-          >A propose</a
+        <RouterLink
+          to="/apropos"
+          class="text-sm font-semibold leading-6 couleur_fond"
+          >A propose</RouterLink
         >
-        <a href="#" class="text-sm font-semibold leading-6 couleur_fond"
-          >Contact</a
+        <RouterLink
+          to="/contact"
+          class="text-sm font-semibold leading-6 couleur_fond"
+          >Contact</RouterLink
         >
-      </PopoverGroup>
+      </div>
 
       <!-- personnaliser icones inscription/connexion -->
 
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <RouterLink
-          to="connexion"
-          href="#"
-          class="text-sm font-semibold leading-6"
-        >
+        <RouterLink to="connexion" class="text-sm font-semibold leading-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -156,7 +157,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/vue";
+import { Dialog, DialogPanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 
 const mobileMenuOpen = ref(false);
