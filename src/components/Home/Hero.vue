@@ -26,7 +26,7 @@
             />
             <button
               type="submit"
-              class="block p-2.5 w-1/4 z-20 bg-[#43B7BE] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-white rounded-e-lg flex items-center"
+              class="p-2.5 w-1/4 z-20 bg-[#43B7BE] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-white rounded-e-lg flex items-center"
             >
               <div class="uppercase">Chercher</div>
               <svg
@@ -116,6 +116,32 @@
       </div>
     </div>
   </div>
+
+  <!-- sections -->
+  <div
+    class="py-3 bg-[#E8EEF5] flex flex-col md:flex-row justify-center items-center"
+  >
+    <div class="w-full md:w-1/2 flex justify-center px-5 py-4">
+      <img
+        src="../../assets/images/image1.jpg"
+        alt="Image description"
+        class="w-full md:w-3/4 rounded-lg"
+      />
+    </div>
+    <div class="w-full md:w-1/2 flex flex-col md:text-left px-4">
+      <h4>Un site immobilier de particulier à particulier !</h4>
+      <p>
+        Contrairement aux autres portails
+        <span>
+          immobiliers, ImmoZero est un site gratuit uniquement destiné aux
+          particuliers.</span
+        >
+        Aucune agence n'est tolérée afin que propriétaires et futurs acheteurs y
+        trouvent tous leur intérêt financier : pas de frais d'agence et des
+        affaires de particulier à particulier !
+      </p>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -127,6 +153,20 @@
   height: 40vh;
 }
 
+span {
+  color: #000000;
+  font-weight: bold;
+}
+
+p {
+  color: gray;
+}
+h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: large;
+  text-transform: uppercase;
+}
 h2 {
   font-family: "Montserrat", sans-serif;
   color: red;
