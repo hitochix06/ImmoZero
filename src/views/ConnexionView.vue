@@ -88,11 +88,11 @@
                 <div class="mt-6 flex items-baseline justify-center gap-x-2">
                   <label for="email-address"></label>
                   <input
-                    v-model="email"
+                    v-model="emails"
                     id="email_address"
                     name="email"
                     type="email"
-                    autocomplete="email"
+                    autocomplete="emails"
                     class="min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
                     placeholder="Adress e-mail"
                     required
@@ -169,11 +169,11 @@
 
               <div class="sm:col-span-3">
                 <div class="mt-2">
-                  <label for="email">Email</label>
+                  <label for="emails">Email</label>
                   <input
-                    v-model="email"
-                    type="email"
-                    name="email"
+                    v-model="emails"
+                    type="emails"
+                    name="emails"
                     autocomplete="off"
                     class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
                     placeholder="Email"
@@ -233,7 +233,7 @@ import { ref } from "vue";
 import axios from "axios";
 
 const isOpen = ref(false);
-const email = ref("");
+const emails = ref("");
 const password = ref("");
 const username = ref("");
 
