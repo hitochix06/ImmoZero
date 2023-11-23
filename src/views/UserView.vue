@@ -336,6 +336,23 @@ const description = ref("");
 const price = ref("");
 const location = ref("");
 
+const handleCreationAnnonces = async () => {
+  try {
+    const response = await axios.post(
+      "https://apihackaton1.osc-fr1.scalingo.io/properties",
+      {
+        title: title.value,
+        description: description.value,
+        price: price.value,
+        location: location.value,
+      }
+    );
+  } catch (error) {
+    // Gérer l'erreur de réseau
+    console.log(error);
+  }
+};
+
 const products = [
   {
     id: 1,
