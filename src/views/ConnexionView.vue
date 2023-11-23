@@ -11,7 +11,8 @@
           <div
             class="text-center ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16"
           >
-            <form @submit.prevent="handleInscription">
+            <!-- formulaire connexion -->
+            <form @submit.prevent="handleConnexion">
               <div class="mx-auto max-w-xs">
                 <h1
                   class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
@@ -23,7 +24,7 @@
                 <div class="mt-6 flex items-baseline justify-center gap-x-2">
                   <label for="email-address"></label>
                   <input
-                    v-model="email"
+                    v-model="email_connexion"
                     id="email_address"
                     name="email"
                     type="email"
@@ -146,14 +147,14 @@
               />
             </svg>
           </div>
-          <div class="mt-4">
+          <div class="mt-4 uppercase ">
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div class="sm:col-span-3">
                 <div class="mt-2">
                   <label
                     for="first-name"
                     class="block text-sm font-medium leading-6 text-gray-900"
-                    >NOM</label
+                    >non</label
                   >
                   <input
                     v-model="username"
@@ -161,7 +162,7 @@
                     name="username"
                     autocomplete="given-name"
                     class="min-w-full flex-auto rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 m-2"
-                    placeholder="Titre"
+                    placeholder="Nom"
                     required
                   />
                 </div>
@@ -231,8 +232,16 @@
 <script setup>
 import { ref } from "vue";
 import axios from "axios";
+import { useRouter } from 'vue-router';
 
 const isOpen = ref(false);
+const router = useRouter();
+
+// Connexion
+const email_connexion = ref("");
+const password_connexion = ref("");
+
+// incrisption
 const emails = ref("");
 const password = ref("");
 const username = ref("");
@@ -240,15 +249,23 @@ const username = ref("");
 // Incrisption
 const handleInscription = async () => {
   try {
-    const response = await axios.post("users/inscription", {
-      username: username.value,
-      email: email.value,
-      password: password.value,
-    });
+    const response = await axios.post(
+      "https://apihackaton1.osc-fr1.scalingo.io/users/register",
+      {
+        username: username.value,
+        email: emails.value,
+        password: password.value,
+      }
+    );
 
-    if (response.data.status === 200) {
-      // Inscription réussie
-      // Vous pouvez rediriger l'utilisateur vers la page de connexion ou faire autre chose
+    if (response.status === 201) {
+      const user = await response.json();
+      console.log(user);
+      // Stocker le message de succès dans le store Vuex
+      store.commit('setSuccessMessage', 'Votre compte a été créé avec succès !')
+
+       // Rediriger l'utilisateur vers la page de connexion
+       router.push('/connexion');
     } else {
       // Gérer l'erreur d'inscription
     }
@@ -260,16 +277,19 @@ const handleInscription = async () => {
 // connexion
 const handleConnexion = async () => {
   try {
-    const response = await axios.post("users/connexion", {
-      email: email.value,
-      password: password.value,
-    });
+    const response = await axios.post(
+      "https://apihackaton1.osc-fr1.scalingo.io/users/login",
+      {
+        email: email_connexion.value,
+        password: password_connexion.value,
+      }
+    );
 
-    if (response.data.status === 200) {
-      // Connexion réussie
-      // Vous pouvez rediriger l'utilisateur vers la page d'accueil ou faire autre chose
+    if (response.status === 201) {
+      const user = await response.json();
+      console.log(user);
     } else {
-      // Gérer l'erreur de connexion
+      // Gérer l'erreur d'inscription
     }
   } catch (error) {
     // Gérer l'erreur de réseau
