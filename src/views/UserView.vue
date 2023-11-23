@@ -185,7 +185,8 @@
   <!-- creation formulaire de modal  -->
   <div class="container mx-auto">
     <div class="flex justify-center">
-      <div
+      <form
+        @submit.prevent="handleCreationAnnonces"
         v-show="isOpen"
         class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50"
       >
@@ -229,7 +230,7 @@
             />
           </div> -->
 
-          <form class="mt-4">
+          <div class="mt-4">
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div class="sm:col-span-3">
                 <div class="mt-2">
@@ -315,9 +316,9 @@
             >
               Ajouter
             </button>
-          </form>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </template>
@@ -338,6 +339,7 @@ const location = ref("");
 
 const handleCreationAnnonces = async () => {
   try {
+    console.log(response);
     const response = await axios.post(
       "https://apihackaton1.osc-fr1.scalingo.io/properties",
       {
