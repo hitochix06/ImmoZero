@@ -50,12 +50,12 @@
                     Mots de passe oublié
                   </a>
                 </div>
-                <RouterLink
-                  to="user"
+                <button
+                  type="submit"
                   class="mt-10 block w-full rounded-md bg-[#43B7BE] px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  style="text-transform: uppercase"
-                  >Connexion
-                </RouterLink>
+                >
+                  <div style="text-transform: uppercase">connexion !</div>
+                </button>
               </div>
             </form>
           </div>
