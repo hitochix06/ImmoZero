@@ -279,6 +279,10 @@
 <script setup>
 import { ref } from "vue";
 import axios from "axios";
+import { useRouter } from "vue-router";
+
+// Router
+const router = useRouter();
 
 // Modal
 const isOpen = ref(false);
@@ -306,10 +310,9 @@ const handleInscription = async () => {
         password: password_inscri.value,
       }
     );
-    console.log(response);
     showAlert.value = true; // Affichez votre alerte
     isOpen.value = false;
-    alert(" Votre compte a été créé avec succès");
+    // alert(" Votre compte a été créé avec succès");
   } catch (error) {
     // Gérer l'erreur de réseau
     console.log(error);
@@ -326,14 +329,11 @@ const handleConnexion = async () => {
         password: password_connexion.value,
       }
     );
-
-    if (response.status === 201) {
-      const token = response.data.token;
-      console.log(token);
-      localStorage.setItem("token", token);
-    } else {
-      // Gérer l'erreur d'inscription
-    }
+    const token = response.data.token;
+    console.log(token);
+    localStorage.setItem("token", token);
+    alert("Vous êtes connecté");
+    router.push("/user");
   } catch (error) {
     // Gérer l'erreur de réseau
   }
