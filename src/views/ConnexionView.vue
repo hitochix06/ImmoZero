@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-[#E8EEF5] py-2 sm:py-5">
+  <div class="bg-[#E8EEF5] py-2 sm:py-5" style="height: 100vh">
     <div class="mx-auto max-w-7xl px-1 lg:px-8">
       <div
-        class="mx-auto mt-16 max-w-full rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 flex flex-col lg:flex-row"
+        class="mx-auto mt-16 max-w-full p-5 sm:mt-20 lg:mx-0 flex flex-col lg:flex-row"
       >
         <div
           class="-mt-2 p-5 lg:mt-0 lg:w-auto lg:max-w-full lg:flex-shrink-0 h-auto flex-grow lg:flex-grow rounded-l-lg"
@@ -122,7 +122,9 @@
         class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50"
         @submit.prevent="handleInscription"
       >
-        <div class="w-full md:w-2/3 lg:w-3/5 p-6 bg-white rounded-md shadow-xl">
+        <div
+          class="w-full md:w-2/3 lg:w-3/5 p-6 bg-white rounded-md shadow-xl m-2"
+        >
           <div class="flex items-center justify-between">
             <h3
               class="text-2xl"
