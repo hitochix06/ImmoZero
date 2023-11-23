@@ -37,7 +37,7 @@
                 <div class="mt-6 flex items-baseline justify-center gap-x-2">
                   <label for="password"></label>
                   <input
-                    v-model="password"
+                    v-model="password_inscrisption"
                     id="password"
                     name="password"
                     type="password"
@@ -296,7 +296,7 @@ const password_connexion = ref("");
 
 // incrisption
 const emails = ref("");
-const password = ref("");
+const password_inscrisption = ref("");
 const username = ref("");
 
 // Incrisption
@@ -307,7 +307,7 @@ const handleInscription = async () => {
       {
         username: username.value,
         email: emails.value,
-        password: password.value,
+        password: password_inscrisption.value,
       }
     );
 
