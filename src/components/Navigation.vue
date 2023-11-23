@@ -200,7 +200,6 @@ const isUserLoggedIn = ref(localStorage.getItem("token") !== null); // Change th
 function logout() {
   // Remove the user's token from localStorage
   localStorage.removeItem("token");
-  localStorage.removeItem("username");
   alert("Vous êtes déconnecté");
   router.push("/");
 

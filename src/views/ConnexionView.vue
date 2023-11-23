@@ -310,16 +310,8 @@ const handleInscription = async () => {
         password: password_inscri.value,
       }
     );
-
-    const token = response.data.token;
-    console.log(token);
-    localStorage.setItem("token", token);
-    localStorage.setItem("username", response.data.username);
-
     showAlert.value = true; // Affichez votre alerte
     isOpen.value = false;
-    // Assurez-vous que l'API renvoie le nom d'utilisateur
-
     // alert(" Votre compte a été créé avec succès");
   } catch (error) {
     // Gérer l'erreur de réseau
@@ -337,11 +329,10 @@ const handleConnexion = async () => {
         password: password_connexion.value,
       }
     );
+
     const token = response.data.token;
     console.log(token);
     localStorage.setItem("token", token);
-    localStorage.setItem("username", response.data.username);
-
     alert("Vous êtes connecté");
     router.push("/user");
     // router.go();
