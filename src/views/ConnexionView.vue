@@ -333,7 +333,6 @@ const handleConnexion = async () => {
     );
 
     const token = response.data.token;
-    console.log(token);
     localStorage.setItem("token", token);
     alert("Vous êtes connecté");
     router.push("/user");

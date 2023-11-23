@@ -326,7 +326,15 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 import { ref } from "vue";
+
+//modal
 const isOpen = ref(false);
+
+// création d'une annonce
+const emails = ref("");
+const password_inscri = ref("");
+const username = ref("");
+
 
 const products = [
   {
