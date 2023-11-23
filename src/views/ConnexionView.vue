@@ -11,7 +11,7 @@
           <div
             class="text-center ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16"
           >
-            <form>
+            <form @submit.prevent="handleInscription">
               <div class="mx-auto max-w-xs">
                 <h1
                   class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
@@ -23,6 +23,7 @@
                 <div class="mt-6 flex items-baseline justify-center gap-x-2">
                   <label for="email-address"></label>
                   <input
+                    v-model="email"
                     id="email_address"
                     name="email"
                     type="email"
@@ -35,6 +36,7 @@
                 <div class="mt-6 flex items-baseline justify-center gap-x-2">
                   <label for="password"></label>
                   <input
+                    v-model="password"
                     id="password"
                     name="password"
                     type="password"
@@ -228,13 +230,14 @@
 
 <script setup>
 import { ref } from "vue";
-import axios from "axios"; // Assurez-vous d'avoir installé axios
+import axios from "axios";
 
 const isOpen = ref(false);
 const email = ref("");
 const password = ref("");
 const username = ref("");
 
+// Incrisption
 const handleInscription = async () => {
   try {
     const response = await axios.post("users/inscription", {
@@ -248,6 +251,25 @@ const handleInscription = async () => {
       // Vous pouvez rediriger l'utilisateur vers la page de connexion ou faire autre chose
     } else {
       // Gérer l'erreur d'inscription
+    }
+  } catch (error) {
+    // Gérer l'erreur de réseau
+  }
+};
+
+// connexion
+const handleConnexion = async () => {
+  try {
+    const response = await axios.post("users/connexion", {
+      email: email.value,
+      password: password.value,
+    });
+
+    if (response.data.status === 200) {
+      // Connexion réussie
+      // Vous pouvez rediriger l'utilisateur vers la page d'accueil ou faire autre chose
+    } else {
+      // Gérer l'erreur de connexion
     }
   } catch (error) {
     // Gérer l'erreur de réseau
