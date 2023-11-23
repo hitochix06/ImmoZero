@@ -262,10 +262,8 @@ const handleInscription = async () => {
       const user = await response.json();
       console.log(user);
       // Stocker le message de succès dans le store Vuex
-      store.commit('setSuccessMessage', 'Votre compte a été créé avec succès !')
-
-       // Rediriger l'utilisateur vers la page de connexion
-       router.push('/connexion');
+      window.alert("Votre compte a été créé avec succès !");
+      window.location.href = "/connexion";
     } else {
       // Gérer l'erreur d'inscription
     }
