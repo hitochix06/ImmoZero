@@ -183,6 +183,10 @@
 import { ref } from "vue";
 import { Dialog, DialogPanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
+import { useRouter } from "vue-router";
+
+// Router
+const router = useRouter();
 
 const mobileMenuOpen = ref(false);
 const isUserLoggedIn = ref(localStorage.getItem("token") !== null); // Change this to true if a token is found in localStorage
@@ -191,6 +195,8 @@ const isUserLoggedIn = ref(localStorage.getItem("token") !== null); // Change th
 function logout() {
   // Remove the user's token from localStorage
   localStorage.removeItem("token");
+  alert("Vous êtes déconnecté");
+  router.push("/connexion");
 
   // Set isUserLoggedIn to false
   isUserLoggedIn.value = false;

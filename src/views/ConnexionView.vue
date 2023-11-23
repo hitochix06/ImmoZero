@@ -334,6 +334,7 @@ const handleConnexion = async () => {
     localStorage.setItem("token", token);
     alert("Vous êtes connecté");
     router.push("/user");
+    // router.go();
   } catch (error) {
     // Gérer l'erreur de réseau
   }
