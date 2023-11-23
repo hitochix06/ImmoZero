@@ -26,7 +26,7 @@
             />
             <button
               type="submit"
-              class="p-2.5 w-1/4 z-20 bg-[#43B7BE] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-white rounded-e-lg flex items-center"
+              class="p-2.5 w-1/3 z-20 bg-[#43B7BE] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-white rounded-e-lg flex items-center"
             >
               <div class="uppercase">Chercher</div>
               <svg
@@ -48,7 +48,6 @@
           </div>
 
           <div class="container mx-auto flex justify-center mt-10">
-            
             <button
               @click="$router.push('/connexion')"
               type="button"
