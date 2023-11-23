@@ -37,7 +37,7 @@
                 <div class="mt-6 flex items-baseline justify-center gap-x-2">
                   <label for="password"></label>
                   <input
-                    v-model="password_inscrisption"
+                    v-model="password_connexion"
                     id="password"
                     name="password"
                     type="password"
@@ -191,7 +191,7 @@
                     >Mot de passe</label
                   >
                   <input
-                    v-model="password"
+                    v-model="password_inscri"
                     type="password"
                     name="password"
                     autocomplete="off"
@@ -211,10 +211,6 @@
             </button>
             <button
               type="submit"
-              @click="
-                showAlert = true;
-                $router.push('/connexion');
-              "
               class="ml-2 text-[#fff] bg-[#43B7BE] rounded hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55"
             >
               Ajouter
@@ -296,7 +292,7 @@ const password_connexion = ref("");
 
 // incrisption
 const emails = ref("");
-const password_inscrisption = ref("");
+const password_inscri = ref("");
 const username = ref("");
 
 // Incrisption
@@ -307,19 +303,16 @@ const handleInscription = async () => {
       {
         username: username.value,
         email: emails.value,
-        password: password_inscrisption.value,
+        password: password_inscri.value,
       }
     );
-
-    if (response.status === 201) {
-      const user = await response.json();
-      console.log(user);
-      showAlert.value = true;
-    } else {
-      // Gérer l'erreur d'inscription
-    }
+    console.log(response);
+    showAlert.value = true; // Affichez votre alerte
+    isOpen.value = false;
+    alert(" Votre compte a été créé avec succès");
   } catch (error) {
     // Gérer l'erreur de réseau
+    console.log(error);
   }
 };
 
@@ -335,8 +328,9 @@ const handleConnexion = async () => {
     );
 
     if (response.status === 201) {
-      const user = await response.json();
-      console.log(user);
+      const token = response.data.token;
+      console.log(token);
+      localStorage.setItem("token", token);
     } else {
       // Gérer l'erreur d'inscription
     }
