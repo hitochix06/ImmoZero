@@ -314,6 +314,7 @@ const handleInscription = async () => {
     );
     showAlert.value = true; // Affichez votre alerte
     isOpen.value = false;
+    localStorage.setItem("username", username.value); // Stockez le nom d'utilisateur dans le localStorage après l'inscription
     // alert(" Votre compte a été créé avec succès");
   } catch (error) {
     // Gérer l'erreur de réseau
@@ -335,8 +336,8 @@ const handleConnexion = async () => {
     const token = response.data.token;
     localStorage.setItem("token", token);
     alert("Vous êtes connecté");
+    router.go();
     router.push("/user");
-    // router.go();
   } catch (error) {
     // Gérer l'erreur de réseau
   }

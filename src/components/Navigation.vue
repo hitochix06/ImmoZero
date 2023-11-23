@@ -100,7 +100,9 @@
             </svg>
             Déconnexion
           </button>
-          <span>{{ username }}</span>
+          <RouterLink to="/user" class="text-sm font-semibold leading-6">
+            <span>{{ username }}</span>
+          </RouterLink>
         </div>
       </div>
     </nav>
@@ -191,8 +193,9 @@ import { useRouter } from "vue-router";
 
 // Router
 const router = useRouter();
-
+// username dans localStorage
 const username = ref(localStorage.getItem("username"));
+
 const mobileMenuOpen = ref(false);
 const isUserLoggedIn = ref(localStorage.getItem("token") !== null); // Change this to true if a token is found in localStorage
 

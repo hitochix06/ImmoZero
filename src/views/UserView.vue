@@ -229,7 +229,7 @@
             />
           </div> -->
 
-          <div class="mt-4">
+          <form class="mt-4">
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div class="sm:col-span-3">
                 <div class="mt-2">
@@ -315,7 +315,7 @@
             >
               Ajouter
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -331,10 +331,10 @@ import { ref } from "vue";
 const isOpen = ref(false);
 
 // création d'une annonce
-const emails = ref("");
-const password_inscri = ref("");
-const username = ref("");
-
+const title = ref("");
+const description = ref("");
+const price = ref("");
+const location = ref("");
 
 const products = [
   {
