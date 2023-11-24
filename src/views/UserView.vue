@@ -353,8 +353,6 @@ import axios from "axios";
 //modal
 const isOpen = ref(false);
 
-const token = localStorage.getItem("token");
-
 // création d'une annonce
 const title = ref("");
 const description = ref("");
@@ -383,6 +381,28 @@ const handleCreationAnnonces = async () => {
     console.log(response);
     isOpen.value = false;
     alert("Annonce ajoutée avec succès");
+  } catch (error) {
+    // Gérer l'erreur de réseau
+    console.log(error);
+  }
+};
+
+// supprimer une annonce
+const deleteProduct = async (id) => {
+  try {
+    const token = localStorage.getItem("token");
+
+    const response = await axios.delete(
+      `https://apihackaton1.osc-fr1.scalingo.io/properties/${Property.Id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    console.log(response);
+    alert("Annonce supprimée avec succès");
   } catch (error) {
     // Gérer l'erreur de réseau
     console.log(error);
