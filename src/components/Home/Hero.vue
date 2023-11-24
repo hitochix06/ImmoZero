@@ -147,8 +147,6 @@
 </style>
 
 <script setup>
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
-import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 import { ref, onMounted } from "vue";
 import axios from "axios";
 import { computed } from "vue";
