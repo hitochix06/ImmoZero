@@ -70,41 +70,39 @@
         Notre Sélection
       </h2>
       <h3>Biens immobiliers à vendre de particulier à particulier</h3>
-      <!-- Création de la carte -->
-      <div v-for="item in data" :key="item.id">
+
+      <div
+        class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-6 gap-y-10"
+      >
         <div
-          class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+          v-for="item in data"
+          :key="item.id"
+          class="group relative shadow-xl bg-white overflow-hidden rounded-lg"
         >
+          <!-- code gere image -->
           <div
-            v-for="product in products"
-            :key="product.id"
-            class="group relative shadow-xl bg-white overflow-hidden rounded-lg"
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-60"
           >
-            <div
-              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:h-60"
-            >
-              <img
-                :src="product.imageSrc"
-                :alt="product.imageAlt"
-                class="h-full w-full object-cover object-center lg:h-full lg:w-full"
-              />
-            </div>
-            <div class="mt-4 flex justify-between">
-              <div>
-                <h1 class="text-lg text-black-900 m-5">
-                  {{ item.title }}
-                </h1>
-                <p class="mt-1 text-sm text-black-900 m-5">
-                  {{ item.description }}
-                </p>
-                <p class="mt-1 text-sm text-black-900 m-5">
-                  {{ item.location }}
-                </p>
-              </div>
-              <p class="text-lg font-medium m-5 text-gray-900">
-                {{ item.price }}€
+            <img
+              src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/295090917.jpg?k=d17621b71b0eaa0c7a37d8d8d02d33896cef75145f61e7d96d296d88375a7d39&o=&hp=1"
+              class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+            />
+          </div>
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h1 class="text-lg text-black-900 m-5">
+                {{ item.title }}
+              </h1>
+              <p class="mt-1 text-sm text-black-900 m-5">
+                {{ item.description }}
+              </p>
+              <p class="mt-1 text-sm text-black-900 m-5">
+                {{ item.location }}
               </p>
             </div>
+            <p class="text-lg font-medium m-5 text-gray-900">
+              {{ item.price }}€
+            </p>
           </div>
         </div>
       </div>
@@ -147,9 +145,6 @@
   background-attachment: fixed;
   height: 50vh;
 }
-
-
-
 </style>
 
 <script setup>
@@ -170,34 +165,4 @@ onMounted(async () => {
     console.error("Erreur lors de la récupération des annonces: ", error);
   }
 });
-
-const products = [
-  {
-    id: 1,
-    imageSrc:
-      "https://www.laconstructionlyonnaise.fr/wp-content/uploads/2022/11/belle-maison-archi-LCL.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-  },
-
-  {
-    id: 2,
-    imageSrc:
-      "https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-  },
-  {
-    id: 1,
-
-    imageSrc:
-      "https://www.depreux-construction.com/wp-content/uploads/2022/12/IC-SELLIER_Page_2-1.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-  },
-  {
-    id: 1,
-
-    imageSrc:
-      "https://www.maisonsclairlogis.fr/wp-content/uploads/maison-contemporaine_onyx-version-nuit.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-  },
-];
 </script>

@@ -157,6 +157,7 @@
           :key="item.id"
           class="group relative shadow-xl bg-white overflow-hidden rounded-lg"
         >
+          <!-- code gere image -->
           <div
             class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-60"
           >
