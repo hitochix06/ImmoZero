@@ -315,6 +315,9 @@ const handleInscription = async () => {
     showAlert.value = true; // Affichez votre alerte
     isOpen.value = false;
     localStorage.setItem("username", username.value); // Stockez le nom d'utilisateur dans le localStorage après l'inscription
+    username.value = "";
+    emails.value = "";
+    password_inscri.value = "";
     // alert(" Votre compte a été créé avec succès");
   } catch (error) {
     // Gérer l'erreur de réseau
@@ -340,6 +343,9 @@ const handleConnexion = async () => {
     router.push("/user");
   } catch (error) {
     alert("Adresse e-mail ou mot de passe incorrect");
+    // Réinitialiser les champs d'input
+    email_connexion.value = "";
+    password_connexion.value = "";
   }
 };
 </script>
