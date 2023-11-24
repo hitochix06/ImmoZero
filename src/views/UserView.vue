@@ -151,19 +151,16 @@
       <!-- Création de la carte -->
       <div v-for="item in data" :key="item.id">
         <div
-          class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+          class="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
         >
           <div
-            v-for="product in products"
-            :key="product.id"
             class="group relative shadow-xl bg-white overflow-hidden rounded-lg"
           >
             <div
               class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-60"
             >
               <img
-                :src="product.imageSrc"
-                :alt="product.imageAlt"
+                src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/295090917.jpg?k=d17621b71b0eaa0c7a37d8d8d02d33896cef75145f61e7d96d296d88375a7d39&o=&hp=1"
                 class="h-full w-full object-cover object-center lg:h-full lg:w-full"
               />
             </div>
@@ -442,12 +439,4 @@ const deleteProduct = async (id) => {
     alert("Erreur lors de la suppression de l'annonce");
   }
 };
-
-const products = [
-  {
-    imageSrc:
-      "https://www.laconstructionlyonnaise.fr/wp-content/uploads/2022/11/belle-maison-archi-LCL.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-  },
-];
 </script>
