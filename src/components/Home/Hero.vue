@@ -96,7 +96,7 @@
               <p class="mt-1 text-sm text-black-900 m-5">
                 {{ item.description }}
               </p>
-              <p class="mt-1 text-sm text-black-900 m-5">
+              <p class="mt-1 text-sm m-5 uppercase text-gray-900">
                 {{ item.location }}
               </p>
             </div>
