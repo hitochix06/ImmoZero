@@ -64,7 +64,7 @@
   </div>
 
   <!-- creation bouton trier par date -->
-  <div class="container mx-auto flex justify-end mt-10">
+  <!-- <div class="container mx-auto flex justify-end mt-10">
     <Menu as="div" class="relative inline-block text-left">
       <div>
         <MenuButton
@@ -137,7 +137,7 @@
         </MenuItems>
       </transition>
     </Menu>
-  </div>
+  </div> -->
 
   <!-- Creation de carte pour les annonces -->
   <div class="bg-white">
