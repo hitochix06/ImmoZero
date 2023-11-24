@@ -186,7 +186,7 @@
               <!-- 
                Création du bouton supprimer -->
               <button
-                @click="deleteProduct(product.id)"
+                @click="deleteProduct(item.id)"
                 class="absolute top-0 right-0 p-2 text-gray-400 hover:text-red-500"
               >
                 <svg
@@ -394,8 +394,14 @@ const handleCreationAnnonces = async () => {
 
 onMounted(async () => {
   try {
+    const token = localStorage.getItem("token");
     const response = await axios.get(
-      "https://apihackaton1.osc-fr1.scalingo.io/properties"
+      "https://apihackaton1.osc-fr1.scalingo.io/get-my-properties",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
     );
     data.value = response.data;
     console.log(data.value);
@@ -408,7 +414,7 @@ const deleteProduct = async (id) => {
   try {
     const token = localStorage.getItem("token");
     const response = await axios.delete(
-      `https://apihackaton1.osc-fr1.scalingo.io/properties/${id}`, // Utilisez le bon ID ici
+      `https://apihackaton1.osc-fr1.scalingo.io/delete-properties/${id}`, // Utilisez le bon ID ici
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -416,6 +422,17 @@ const deleteProduct = async (id) => {
       }
     );
     alert("Annonce supprimée avec succès");
+
+    
+    const responseProperties = await axios.get(
+      "https://apihackaton1.osc-fr1.scalingo.io/get-my-properties",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    data.value = responseProperties.data;
   } catch (error) {
     console.error("Erreur lors de la suppression de l'annonce: ", error);
     alert("Erreur lors de la suppression de l'annonce");
