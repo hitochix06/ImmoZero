@@ -79,7 +79,7 @@
         </RouterLink>
         <div
           v-else
-          class="text-sm font-semibold leading-6 flex flex-col items-center hover:underline"
+          class="text-sm font-semibold leading-6 flex flex-col items-center"
         >
           <button
             type="button"
