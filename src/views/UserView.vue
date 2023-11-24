@@ -149,9 +149,13 @@
       </h2>
 
       <!-- Création de la carte -->
-      <div v-for="item in data" :key="item.id">
+      <div
+        class="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+      >
         <div
-          class="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+          v-for="item in data"
+          :key="item.id"
+          class="group relative shadow-xl bg-white overflow-hidden rounded-lg"
         >
           <div
             class="group relative shadow-xl bg-white overflow-hidden rounded-lg"
