@@ -387,6 +387,12 @@ const handleCreationAnnonces = async () => {
     isOpen.value = false;
     router.go();
     alert("Annonce ajoutée avec succès");
+
+    // Reset des valeurs
+    title.value = "";
+    description.value = "";
+    price.value = "";
+    location.value = "";
   } catch (error) {
     console.error("Erreur lors de la création de l'annonce: ", error);
     alert("Erreur lors de l'ajout de l'annonce");
