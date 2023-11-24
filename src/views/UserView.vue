@@ -4,35 +4,16 @@
     <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
       <div class="md:flex">
         <div class="w-full p-3">
-          <div class="relative">
+          <div class="relative shadow-xl bg-white overflow-hidden rounded-lg">
             <input
               type="search"
-              id="search-dropdown"
+              id="search"
+              v-model="searchValue"
+              @input="search"
               class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
               placeholder="Recherchez dans vos annonces"
               required
             />
-            <button
-              type="submit"
-              class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full bg-[#43B7BE] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-white rounded-e-lg flex items-center"
-            >
-              <div class="uppercase">Chercher</div>
-              <svg
-                class="w-4 h-4 ml-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                />
-              </svg>
-            </button>
           </div>
 
           <div class="container mx-auto flex justify-center mt-10">
@@ -360,12 +341,37 @@ import { useRouter } from "vue-router";
 // Router
 const router = useRouter();
 
+// Variables
 const data = ref("");
 const isOpen = ref(false);
 const title = ref("");
 const description = ref("");
 const price = ref("");
 const location = ref("");
+const searchValue = ref("");
+
+const search = async () => {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await axios.get(
+      "https://apihackaton1.osc-fr1.scalingo.io/get-my-properties",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    data.value = response.data.filter(
+      (item) =>
+        item.title.includes(searchValue.value) ||
+        item.description.includes(searchValue.value) ||
+        item.location.includes(searchValue.value) ||
+        item.price.toString().includes(searchValue.value)
+    );
+  } catch (error) {
+    console.error("Erreur lors de la recherche: ", error);
+  }
+};
 
 const handleCreationAnnonces = async () => {
   try {
@@ -411,7 +417,13 @@ onMounted(async () => {
         },
       }
     );
-    data.value = response.data;
+    data.value = response.data.filter(
+      (item) =>
+        item.title.includes(searchValue.value) ||
+        item.description.includes(searchValue.value) ||
+        item.location.includes(searchValue.value) ||
+        item.price.toString().includes(searchValue.value)
+    );
     console.log(data.value);
   } catch (error) {
     console.error("Erreur lors de la récupération des annonces: ", error);
