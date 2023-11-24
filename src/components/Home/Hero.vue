@@ -9,45 +9,19 @@
             L'immoblier gratuit entre particuliers
           </h1>
 
-          <div class="relative flex z-0">
+          <div
+            class="relative z-0 shadow-xl bg-white overflow-hidden rounded-lg"
+          >
             <input
-              v-model="search.value"
               type="search"
               id="search"
-              class="block p-2.5 w-1/2 z-20 text-sm text-gray-900 bg-gray-50 rounded-s-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-              placeholder="chercher par ville"
+              v-model="searchValue"
+              @input="search"
+              class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+              placeholder="Recherchez dans vos annonces"
               required
             />
-            <input
-              type="number"
-              id="budget"
-              class="block p-2.5 w-1/2 z-20 text-sm text-gray-900 bg-gray-50 border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-              placeholder="Budget maximum"
-              required
-            />
-            <button
-              type="submit"
-              class="p-2.5 w-1/3 z-20 bg-[#43B7BE] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 text-white rounded-e-lg flex items-center"
-            >
-              <div class="uppercase">Chercher</div>
-              <svg
-                class="w-4 h-4 ml-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                />
-              </svg>
-            </button>
           </div>
-
           <div class="container mx-auto flex justify-center mt-10">
             <button
               @click="$router.push('/connexion')"
@@ -149,27 +123,48 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import axios from "axios";
-import { computed } from "vue";
 
 const data = ref("");
 
 // barre de recherche
-const search = ref("");
-const filteredData = computed(() => {
-  if (!search.value) {
-    return data.value;
+const searchValue = ref("");
+
+// fonction de recherche
+const search = async () => {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await axios.get(
+      "https://apihackaton1.osc-fr1.scalingo.io/properties",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    data.value = response.data.filter(
+      (item) =>
+        item.title.includes(searchValue.value) ||
+        item.description.includes(searchValue.value) ||
+        item.location.includes(searchValue.value) ||
+        item.price.toString().includes(searchValue.value)
+    );
+  } catch (error) {
+    console.error("Erreur lors de la recherche: ", error);
   }
-  return data.value.filter((item) =>
-    item.title.toLowerCase().includes(search.value.toLowerCase())
-  );
-});
+};
 
 onMounted(async () => {
   try {
     const response = await axios.get(
       "https://apihackaton1.osc-fr1.scalingo.io/properties"
     );
-    data.value = response.data;
+    data.value = response.data.filter(
+      (item) =>
+        item.title.includes(searchValue.value) ||
+        item.description.includes(searchValue.value) ||
+        item.location.includes(searchValue.value) ||
+        item.price.toString().includes(searchValue.value)
+    );
     console.log(data.value);
   } catch (error) {
     console.error("Erreur lors de la récupération des annonces: ", error);
