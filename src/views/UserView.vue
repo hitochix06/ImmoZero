@@ -139,8 +139,6 @@
     </Menu>
   </div>
 
-  <!-- teste -->
-
   <!-- Creation de carte pour les annonces -->
   <div class="bg-white">
     <div
@@ -150,6 +148,7 @@
         Annonces récentes
       </h2>
 
+      <!-- Création de la carte -->
       <div v-for="item in data" :key="item.id">
         <div
           class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
@@ -157,10 +156,10 @@
           <div
             v-for="product in products"
             :key="product.id"
-            class="group relative"
+            class="group relative shadow-xl bg-white overflow-hidden rounded-lg "
           >
             <div
-              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80"
+              class="aspect-h-1 aspect-w-1 w-full  overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80"
             >
               <img
                 :src="product.imageSrc"
@@ -170,17 +169,22 @@
             </div>
             <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="text-sm text-gray-700">
+                <h3 class="text-sm text-gray-700 m-2">
                   <a :href="product.href">
                     <span aria-hidden="true" class="absolute inset-0" />
                     {{ item.title }}
                   </a>
                 </h3>
-                <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
+                <p class="mt-1 text-sm text-black-900 m-2">
+                  {{ item.description }}
+                </p>
               </div>
-              <p class="text-sm font-medium text-gray-900">
-                {{ product.price }}
-              </p>
+              <p class="text-lg font-medium m-2 text-gray-900">{{ item.price }}€</p>
+
+
+              
+              <!-- 
+               Création du bouton supprimer -->
               <button
                 @click="deleteProduct(product.id)"
                 class="absolute top-0 right-0 p-2 text-gray-400 hover:text-red-500"
@@ -421,44 +425,30 @@ const deleteProduct = async (id) => {
 const products = [
   {
     id: 1,
-    name: "Basic Tee",
-    href: "#",
     imageSrc:
       "https://www.laconstructionlyonnaise.fr/wp-content/uploads/2022/11/belle-maison-archi-LCL.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
   },
 
   {
     id: 2,
-    name: "Basic Tee",
-    href: "#",
     imageSrc:
       "https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
   },
   {
     id: 1,
-    name: "Basic Tee",
-    href: "#",
+
     imageSrc:
       "https://www.depreux-construction.com/wp-content/uploads/2022/12/IC-SELLIER_Page_2-1.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
   },
   {
     id: 1,
-    name: "Basic Tee",
-    href: "#",
+
     imageSrc:
       "https://www.maisonsclairlogis.fr/wp-content/uploads/maison-contemporaine_onyx-version-nuit.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
   },
 ];
 </script>
