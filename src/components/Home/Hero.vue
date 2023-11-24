@@ -148,29 +148,8 @@
   height: 50vh;
 }
 
-span {
-  color: #000000;
-  font-weight: bold;
-}
 
-p {
-  color: gray;
-}
-h4 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: large;
-  text-transform: uppercase;
-}
-h2 {
-  font-family: "Montserrat", sans-serif;
-  color: red;
-  text-decoration: underline;
-}
-h3 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-}
+
 </style>
 
 <script setup>
@@ -178,6 +157,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 import { ref, onMounted } from "vue";
 import axios from "axios";
+const data = ref("");
 
 onMounted(async () => {
   try {

@@ -159,7 +159,7 @@
             class="group relative shadow-xl bg-white overflow-hidden rounded-lg"
           >
             <div
-              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:h-60"
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-60"
             >
               <img
                 :src="product.imageSrc"
