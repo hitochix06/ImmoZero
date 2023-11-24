@@ -139,10 +139,10 @@
     </Menu>
   </div>
 
+  <!-- teste -->
 
+  <p>{{ data.title }}</p>
 
-<!-- teste -->
-  
   <!-- Creation de carte pour les annonces -->
   <div class="bg-white">
     <div
@@ -354,6 +354,9 @@ import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 import { ref } from "vue";
 import axios from "axios";
 
+//recuperation des annonces
+const data = ref("");
+
 //modal
 const isOpen = ref(false);
 
@@ -368,7 +371,7 @@ const handleCreationAnnonces = async () => {
     const token = localStorage.getItem("token");
 
     const response = await axios.post(
-      "https://apihackaton1.osc-fr1.scalingo.io/properties",
+      "https://apihackaton1.osc-fr1.scalingo.io/create-properties",
       {
         title: title.value,
         description: description.value,
@@ -390,6 +393,14 @@ const handleCreationAnnonces = async () => {
     console.log(error);
   }
 };
+
+// recuperation des annonces
+onMounted(async () => {
+  const response = await axios.get(
+    "https://apihackaton1.osc-fr1.scalingo.io/properties"
+  );
+  data.value = response.data;
+});
 
 // supprimer une annonce
 const deleteProduct = async (id) => {
