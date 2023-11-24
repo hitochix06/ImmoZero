@@ -240,6 +240,7 @@
                     >Titre</label
                   >
                   <input
+                    v-model="title"
                     type="text"
                     name="first-name"
                     id="first-name"
@@ -255,6 +256,7 @@
                 <div class="mt-2">
                   <label for="Price">Prix</label>
                   <input
+                    v-model="price"
                     type="number"
                     name="price"
                     id="price"
@@ -274,6 +276,7 @@
                     >Emplacement</label
                   >
                   <input
+                    v-model="location"
                     id="location"
                     name="location"
                     type="text"
@@ -293,6 +296,7 @@
                 >
                 <div class="mt-2">
                   <textarea
+                    v-model="description"
                     id="description"
                     name="description"
                     autocomplete="off"
@@ -327,9 +331,12 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 import { ref } from "vue";
+import axios from "axios";
 
 //modal
 const isOpen = ref(false);
+
+const token = localStorage.getItem("token");
 
 // création d'une annonce
 const title = ref("");
@@ -339,7 +346,8 @@ const location = ref("");
 
 const handleCreationAnnonces = async () => {
   try {
-    console.log(response);
+    const token = localStorage.getItem("token");
+
     const response = await axios.post(
       "https://apihackaton1.osc-fr1.scalingo.io/properties",
       {
@@ -347,8 +355,17 @@ const handleCreationAnnonces = async () => {
         description: description.value,
         price: price.value,
         location: location.value,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
     );
+
+    console.log(response);
+    isOpen.value = false;
+    alert("Annonce ajoutée avec succès");
   } catch (error) {
     // Gérer l'erreur de réseau
     console.log(error);
