@@ -359,6 +359,10 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 import { ref, onMounted } from "vue";
 import axios from "axios";
+import { useRouter } from "vue-router";
+
+// Router
+const router = useRouter();
 
 const data = ref("");
 const isOpen = ref(false);
@@ -385,6 +389,7 @@ const handleCreationAnnonces = async () => {
       }
     );
     isOpen.value = false;
+    router.go();
     alert("Annonce ajoutée avec succès");
   } catch (error) {
     console.error("Erreur lors de la création de l'annonce: ", error);
@@ -423,7 +428,6 @@ const deleteProduct = async (id) => {
     );
     alert("Annonce supprimée avec succès");
 
-    
     const responseProperties = await axios.get(
       "https://apihackaton1.osc-fr1.scalingo.io/get-my-properties",
       {
@@ -441,30 +445,8 @@ const deleteProduct = async (id) => {
 
 const products = [
   {
-    id: 1,
     imageSrc:
       "https://www.laconstructionlyonnaise.fr/wp-content/uploads/2022/11/belle-maison-archi-LCL.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-  },
-
-  {
-    id: 2,
-    imageSrc:
-      "https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-  },
-  {
-    id: 1,
-
-    imageSrc:
-      "https://www.depreux-construction.com/wp-content/uploads/2022/12/IC-SELLIER_Page_2-1.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-  },
-  {
-    id: 1,
-
-    imageSrc:
-      "https://www.maisonsclairlogis.fr/wp-content/uploads/maison-contemporaine_onyx-version-nuit.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
   },
 ];
