@@ -168,47 +168,50 @@ h3 {
 </style>
 
 <script setup>
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
+import { ChevronDownIcon } from "@heroicons/vue/20/solid";
+import { ref, onMounted } from "vue";
+import axios from "axios";
+
+onMounted(async () => {
+  try {
+    const response = await axios.get(
+      "https://apihackaton1.osc-fr1.scalingo.io/properties"
+    );
+    data.value = response.data;
+    console.log(data.value);
+  } catch (error) {
+    console.error("Erreur lors de la récupération des annonces: ", error);
+  }
+});
+
 const products = [
   {
     id: 1,
-    name: "Basic Tee",
-    href: "#",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      "https://www.laconstructionlyonnaise.fr/wp-content/uploads/2022/11/belle-maison-archi-LCL.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
   },
 
   {
     id: 2,
-    name: "Basic Tee",
-    href: "#",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      "https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
   },
   {
     id: 1,
-    name: "Basic Tee",
-    href: "#",
+
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      "https://www.depreux-construction.com/wp-content/uploads/2022/12/IC-SELLIER_Page_2-1.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
   },
   {
     id: 1,
-    name: "Basic Tee",
-    href: "#",
+
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      "https://www.maisonsclairlogis.fr/wp-content/uploads/maison-contemporaine_onyx-version-nuit.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
   },
 ];
 </script>

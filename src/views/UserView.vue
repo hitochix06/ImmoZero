@@ -156,10 +156,10 @@
           <div
             v-for="product in products"
             :key="product.id"
-            class="group relative shadow-xl bg-white overflow-hidden rounded-lg "
+            class="group relative shadow-xl bg-white overflow-hidden rounded-lg"
           >
             <div
-              class="aspect-h-1 aspect-w-1 w-full  overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80"
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:h-60"
             >
               <img
                 :src="product.imageSrc"
@@ -169,20 +169,20 @@
             </div>
             <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="text-sm text-gray-700 m-2">
-                  <a :href="product.href">
-                    <span aria-hidden="true" class="absolute inset-0" />
-                    {{ item.title }}
-                  </a>
-                </h3>
-                <p class="mt-1 text-sm text-black-900 m-2">
+                <h1 class="text-lg text-black-900 m-5">
+                  {{ item.title }}
+                </h1>
+                <p class="mt-1 text-sm text-black-900 m-5">
                   {{ item.description }}
                 </p>
+                <p class="mt-1 text-sm text-black-900 m-5">
+                  {{ item.location }}
+                </p>
               </div>
-              <p class="text-lg font-medium m-2 text-gray-900">{{ item.price }}€</p>
+              <p class="text-lg font-medium m-5 text-gray-900">
+                {{ item.price }}€
+              </p>
 
-
-              
               <!-- 
                Création du bouton supprimer -->
               <button
