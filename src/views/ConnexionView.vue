@@ -322,7 +322,6 @@ const handleInscription = async () => {
   }
 };
 
-
 // connexion
 const handleConnexion = async () => {
   try {
