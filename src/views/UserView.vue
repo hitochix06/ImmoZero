@@ -141,8 +141,6 @@
 
   <!-- teste -->
 
-  <p>{{ data.title }}</p>
-
   <!-- Creation de carte pour les annonces -->
   <div class="bg-white">
     <div
@@ -152,51 +150,55 @@
         Annonces récentes
       </h2>
 
-      <div
-        class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
-      >
+      <div v-for="item in data" :key="item.id">
         <div
-          v-for="product in products"
-          :key="product.id"
-          class="group relative"
+          class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
         >
           <div
-            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80"
+            v-for="product in products"
+            :key="product.id"
+            class="group relative"
           >
-            <img
-              :src="product.imageSrc"
-              :alt="product.imageAlt"
-              class="h-full w-full object-cover object-center lg:h-full lg:w-full"
-            />
-          </div>
-          <div class="mt-4 flex justify-between">
-            <div>
-              <h3 class="text-sm text-gray-700">
-                <a :href="product.href">
-                  <span aria-hidden="true" class="absolute inset-0" />
-                  {{ product.name }}
-                </a>
-              </h3>
-              <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
-            </div>
-            <p class="text-sm font-medium text-gray-900">{{ product.price }}</p>
-            <button
-              @click="deleteProduct(product.id)"
-              class="absolute top-0 right-0 p-2 text-gray-400 hover:text-red-500"
+            <div
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="w-6 h-6"
+              <img
+                :src="product.imageSrc"
+                :alt="product.imageAlt"
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+              />
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a :href="product.href">
+                    <span aria-hidden="true" class="absolute inset-0" />
+                    {{ item.title }}
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
+              </div>
+              <p class="text-sm font-medium text-gray-900">
+                {{ product.price }}
+              </p>
+              <button
+                @click="deleteProduct(product.id)"
+                class="absolute top-0 right-0 p-2 text-gray-400 hover:text-red-500"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -351,16 +353,11 @@
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { ChevronDownIcon } from "@heroicons/vue/20/solid";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import axios from "axios";
 
-//recuperation des annonces
 const data = ref("");
-
-//modal
 const isOpen = ref(false);
-
-// création d'une annonce
 const title = ref("");
 const description = ref("");
 const price = ref("");
@@ -369,7 +366,6 @@ const location = ref("");
 const handleCreationAnnonces = async () => {
   try {
     const token = localStorage.getItem("token");
-
     const response = await axios.post(
       "https://apihackaton1.osc-fr1.scalingo.io/create-properties",
       {
@@ -384,43 +380,41 @@ const handleCreationAnnonces = async () => {
         },
       }
     );
-
-    console.log(response);
     isOpen.value = false;
     alert("Annonce ajoutée avec succès");
   } catch (error) {
-    // Gérer l'erreur de réseau
-    console.log(error);
+    console.error("Erreur lors de la création de l'annonce: ", error);
+    alert("Erreur lors de l'ajout de l'annonce");
   }
 };
 
-// recuperation des annonces
 onMounted(async () => {
-  const response = await axios.get(
-    "https://apihackaton1.osc-fr1.scalingo.io/properties"
-  );
-  data.value = response.data;
+  try {
+    const response = await axios.get(
+      "https://apihackaton1.osc-fr1.scalingo.io/properties"
+    );
+    data.value = response.data;
+    console.log(data.value);
+  } catch (error) {
+    console.error("Erreur lors de la récupération des annonces: ", error);
+  }
 });
 
-// supprimer une annonce
 const deleteProduct = async (id) => {
   try {
     const token = localStorage.getItem("token");
-
     const response = await axios.delete(
-      `https://apihackaton1.osc-fr1.scalingo.io/properties/${Property.Id}`,
+      `https://apihackaton1.osc-fr1.scalingo.io/properties/${id}`, // Utilisez le bon ID ici
       {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       }
     );
-
-    console.log(response);
     alert("Annonce supprimée avec succès");
   } catch (error) {
-    // Gérer l'erreur de réseau
-    console.log(error);
+    console.error("Erreur lors de la suppression de l'annonce: ", error);
+    alert("Erreur lors de la suppression de l'annonce");
   }
 };
 
@@ -430,7 +424,7 @@ const products = [
     name: "Basic Tee",
     href: "#",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      "https://www.laconstructionlyonnaise.fr/wp-content/uploads/2022/11/belle-maison-archi-LCL.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
@@ -441,7 +435,7 @@ const products = [
     name: "Basic Tee",
     href: "#",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      "https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
@@ -451,7 +445,7 @@ const products = [
     name: "Basic Tee",
     href: "#",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      "https://www.depreux-construction.com/wp-content/uploads/2022/12/IC-SELLIER_Page_2-1.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
@@ -461,7 +455,7 @@ const products = [
     name: "Basic Tee",
     href: "#",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      "https://www.maisonsclairlogis.fr/wp-content/uploads/maison-contemporaine_onyx-version-nuit.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
