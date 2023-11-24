@@ -301,7 +301,7 @@ const emails = ref("");
 const password_inscri = ref("");
 const username = ref("");
 
-// Incrisption
+// function Incrisption
 const handleInscription = async () => {
   try {
     const response = await axios.post(
@@ -322,7 +322,7 @@ const handleInscription = async () => {
   }
 };
 
-// connexion
+// function connexion
 const handleConnexion = async () => {
   try {
     const response = await axios.post(
@@ -339,7 +339,7 @@ const handleConnexion = async () => {
     router.go();
     router.push("/user");
   } catch (error) {
-    // Gérer l'erreur de réseau
+    alert("Adresse e-mail ou mot de passe incorrect");
   }
 };
 </script>

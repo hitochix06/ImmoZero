@@ -393,6 +393,7 @@ const handleCreationAnnonces = async () => {
   }
 };
 
+// Récupération des annonces
 onMounted(async () => {
   try {
     const token = localStorage.getItem("token");
