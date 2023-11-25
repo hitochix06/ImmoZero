@@ -221,10 +221,13 @@
         </div>
       </form>
     </div>
+  </div>
 
-    <!-- cree une alerte -->
+  <!-- cree une alerte -->
+  <transition name="slide-fade">
     <div
       v-show="showAlert"
+      :class="{ 'alert-hide': !showAlert }"
       id="alert-border-3"
       class="fixed top-0 right-0 flex items-center p-5 mb-4 text-green-800 border-t-4 border-green-300 bg-green-50 dark:text-green-400 dark:bg-gray-800 dark:border-green-800"
       role="alert"
@@ -244,37 +247,48 @@
         Votre compte a été créé avec succès !
         <a href="#" class="font-semibold underline hover:no-underline"></a>
       </div>
-      <button
-        @click="showAlert = false"
-        type="button"
-        class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
-        data-dismiss-target="#alert-border-3"
-        aria-label="Close"
+      <!-- <button
+      @click="showAlert = false"
+      type="button"
+      class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
+      data-dismiss-target="#alert-border-3"
+      aria-label="Close"
+    >
+      <svg
+        class="w-3 h-3"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 14 14"
       >
-        <svg
-          class="w-3 h-3"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 14"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-          />
-        </svg>
-      </button>
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+        />
+      </svg>
+    </button> -->
     </div>
-  </div>
+  </transition>
 </template>
 
 <style scoped>
 .lg\:py-16 {
   padding-top: 1rem;
   padding-bottom: 0rem;
+}
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>
 
@@ -318,6 +332,11 @@ const handleInscription = async () => {
     username.value = "";
     emails.value = "";
     password_inscri.value = "";
+
+    // Faire disparaître l'alerte après 5 secondes
+    setTimeout(() => {
+      showAlert.value = false;
+    }, 3000);
     // alert(" Votre compte a été créé avec succès");
   } catch (error) {
     // Gérer l'erreur de réseau

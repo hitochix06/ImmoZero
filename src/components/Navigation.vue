@@ -214,7 +214,7 @@
   </header>
 </template>
 
-<style>
+<style scoped>
 .texte_majuscule {
   text-transform: uppercase;
 }
