@@ -245,7 +245,6 @@
       </svg>
       <div class="ms-3 text-sm font-medium">
         Votre compte a été créé avec succès !
-        <a href="#" class="font-semibold underline hover:no-underline"></a>
       </div>
       <!-- <button
       @click="showAlert = false"
@@ -293,10 +292,7 @@
           d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
         />
       </svg>
-      <div class="ms-3 text-sm font-medium">
-        tu es connecté !
-        <a href="#" class="font-semibold underline hover:no-underline"></a>
-      </div>
+      <div class="ms-3 text-sm font-medium">tu es connecté !</div>
     </div>
   </transition>
 </template>
@@ -390,7 +386,7 @@ const handleConnexion = async () => {
 
     showAlertConnexion.value = true; // Affichez votre alerte
     // router.go();
-    router.push("/user");
+    // router.push("/user");
 
     // Faire disparaître l'alerte après 5 secondes
     setTimeout(() => {
